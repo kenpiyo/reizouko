@@ -56,10 +56,10 @@
                             <th scope="col">賞味期限</th>
                         </tr>
                     </thead>
-                    <tbody th:each="syokuzai : ${contentsList}" >
+                    <tbody th:each="contentsList : ${contentsList}" >
                         <tr>
                             <th scope="row" th:text="${contentsList.id}"></th>
-                            <td th:text="${contentsList.name}"></td>
+                            <td th:text="${contentsList.syokuzaiName}"></td>
                             <td th:text="${contentsList.amount}"></td>
                             <td th:text="${contentsList.expDate}"></td>
                         </tr>
