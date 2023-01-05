@@ -30,16 +30,19 @@
     </nav>
 
     <h1>食材登録</h1>
-    <form action="#" th:action="@{/contents}" th:method="post" th:object="${resisterForm}">
+    <form action="#" th:action="@{/reizouko/contents}" th:method="post" th:object="${resisterForm}">
         <div>
             <label for="syokuzaiNameInput">食材</label>
-            <input type="text" id="syokuzaiNameInput">
+            <input type="text" id="syokuzaiNameInput" th:field="*{syokuzaiName}">
+                <p th:if="${#fields.hasErrors('syokuzaiName')}" th:errors="*{syokuzainame}">error</p>
 
             <label for="amountInput">量</label>
-            <input type="text" id="amountInput">
+            <input type="text" id="amountInput" th:field="*{amount}">
+                <p th:if="${#fields.hasErrors('amount')}" th:errors="*{amount}">error</p>
 
             <label for="expDateInput">賞味期限</label>
-            <input type="text" id="expDateInput">
+            <input type="text" id="expDateInput" th:field="*{expDate}">
+                <p th:if="${#fields.hasErrors('expDate')}" th:errors="*{expDate}">error</p>
         </div>
         <div>
             <button type="submit">登録</button>
